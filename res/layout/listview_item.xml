@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- 
+该属性是当一个为view获取焦点时，定义viewGroup和其子控件两者之间的关系。
+属性的值有三种：
+        beforeDescendants：viewgroup会优先其子类控件而获取到焦点
+        afterDescendants：viewgroup只有当其子类控件不需要获取焦点时才获取焦点
+        blocksDescendants：viewgroup会覆盖子类控件而直接获得焦点
+ -->
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:orientation="vertical"
+    android:descendantFocusability="blocksDescendants"
+    >
+
+    <ImageView
+        android:id="@+id/listview_item_imageview"
+        android:layout_width="fill_parent"
+        android:layout_height="20dip"
+        android:scaleType="fitXY"
+        android:src="@drawable/ic_launcher" />
+
+    <com.example.listnestinggridview.NoScrollGridView
+        android:id="@+id/listview_item_gridview"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:horizontalSpacing="5dip"
+        android:numColumns="2"
+        android:stretchMode="columnWidth"
+        android:verticalSpacing="5dip" />
+
+</LinearLayout>
